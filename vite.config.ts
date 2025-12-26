@@ -16,4 +16,8 @@ export default defineConfig({
       '@/app': path.resolve(__dirname, './src/app'),
     },
   },
+  define: {
+    // This allows us to conditionally enable MSW in development
+    __API_MOCKING__: process.env.NODE_ENV === 'development',
+  },
 })
