@@ -1,19 +1,9 @@
-import { HttpResponse, http } from 'msw';
 import { setupWorker } from 'msw/browser'
+import { loginHandler } from './loginHandler';
 
 // Define your API mocks here
 const handlers = [
-  // Example API endpoint mock
-  http.get('/api/example', () => {
-    return HttpResponse.json({
-        message: 'This is a mocked response',
-        data: {
-          id: 1,
-          name: 'Example Item'
-        }
-      }
-    );
-  }),
+  loginHandler,
 ];
 
 // Create worker instance

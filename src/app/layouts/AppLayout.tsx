@@ -1,9 +1,12 @@
-import { HomePage } from '@/pages/home';
+import { LoginPage } from '@/pages/Login';
+import { PATHS } from '@/shared/constants';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 export const AppLayout = () => {
   return (
-    <div className="app-layout">
-      <HomePage />
-    </div>
+    <Routes>
+      <Route path={PATHS.LOGIN} element={<LoginPage />} />
+      <Route path="*" element={<Navigate to={PATHS.LOGIN} />} />
+    </Routes>
   );
 };
