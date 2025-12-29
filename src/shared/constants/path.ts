@@ -1,5 +1,7 @@
 const PATHS = {
-    LOGIN: 'LOGIN',
+    LOGIN: '/login',
+    REGISTRATION: '/registration',
+    COURSE_LIST: '/courses'
 }
 
 export { PATHS }
