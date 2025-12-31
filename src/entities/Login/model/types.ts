@@ -3,9 +3,4 @@ interface Login {
     password: string
 }
 
-interface Tokens {
-    accessToken: string,
-    refreshToken: string
-}
-
-export type { Login, Tokens }
+export type { Login }
