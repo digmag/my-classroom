@@ -2,6 +2,7 @@ import { PATHS } from '@/shared/constants';
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { UnauthorizedLayout } from './UnauthorizedLayout';
+import { AuthorizedLayout } from './AuthorizedLayout';
 
 const LoginPage = lazy(() => import('@/pages/Login'))
 const RegistrationPage = lazy(() => import('@/pages/Registration'))
@@ -20,7 +21,10 @@ export const AppLayout = () => {
           <RegistrationPage />
         </UnauthorizedLayout>
       } />
-      <Route path={PATHS.COURSE_LIST} element={<CourseListPage />} />
+      <Route path={PATHS.COURSE_LIST} element={
+        <AuthorizedLayout>
+          <CourseListPage />
+        </AuthorizedLayout>} />
       <Route path="*" element={<Navigate to={PATHS.LOGIN} />} />
     </Routes>
   );

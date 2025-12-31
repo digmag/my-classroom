@@ -5,9 +5,4 @@ interface RegistrationBody {
     fullName: string
 }
 
-interface Tokens {
-    accessToken: string,
-    refreshToken: string
-}
-
-export type { RegistrationBody, Tokens }
+export type { RegistrationBody }

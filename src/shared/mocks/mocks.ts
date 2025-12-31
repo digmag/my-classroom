@@ -1,11 +1,13 @@
 import { setupWorker } from 'msw/browser'
 import { loginHandler } from './loginHandler';
 import { registrationHandler } from './registrationHandler';
+import { courseHandler } from './courseHandler';
 
 // Define your API mocks here
 const handlers = [
   loginHandler,
   registrationHandler,
+  courseHandler,
 ];
 
 // Create worker instance
